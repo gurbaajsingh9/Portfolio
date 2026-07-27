@@ -271,10 +271,19 @@ export async function GET() {
         query: GITHUB_GRAPHQL_QUERY,
         variables: { username: cleanUsername },
       }),
-      next: { revalidate: 3600 } // Cache the GitHub response for 1 hour
+      cache: 'no-store'
     });
 
     const result = await response.json();
+
+    if (!response.ok) {
+      console.error('GitHub API HTTP error:', result);
+      return NextResponse.json(
+        { success: false, message: `GitHub API error: ${result.message || response.statusText}` }, 
+        { status: response.status }
+      );
+    }
+
     const { data, errors } = result;
 
     if (errors) {
