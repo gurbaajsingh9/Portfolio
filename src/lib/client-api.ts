@@ -26,7 +26,7 @@ export const githubApi = {
 
 export const guestbookApi = {
     getEntries: async () => {
-        const res = await api.get<ApiResponse<GuestbookEntry[]>>("/guestbook");
+        const res = await api.get<ApiResponse<OurGuestbookEntry[]>>("/guestbook");
         return res.data;
     },
 
