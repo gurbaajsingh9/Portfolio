@@ -8,15 +8,15 @@ const env = createEnv({
    */
   server: {
     NODE_ENV: z.enum(["development", "production"]).default("development"),
-    DATABASE_URL: z.url(),
+    DATABASE_URL: z.string().default(""),
     NEXT_RUNTIME: z.enum(["nodejs", "edge"]).default("nodejs"),
-    GITHUB_CLIENT_ID: z.string().min(1),
-    GITHUB_CLIENT_SECRET: z.string().min(1),
-    GOOGLE_CLIENT_ID: z.string().min(1),
-    GOOGLE_CLIENT_SECRET: z.string().min(1),
-    BETTER_AUTH_SECRET: z.string().min(1),
-    BETTER_AUTH_URL: z.url().default("http://localhost:3000"),
-    GITHUB_TOKEN: z.string().min(1)
+    GITHUB_CLIENT_ID: z.string().default(""),
+    GITHUB_CLIENT_SECRET: z.string().default(""),
+    GOOGLE_CLIENT_ID: z.string().default(""),
+    GOOGLE_CLIENT_SECRET: z.string().default(""),
+    BETTER_AUTH_SECRET: z.string().default(""),
+    BETTER_AUTH_URL: z.string().default("http://localhost:3000"),
+    GITHUB_TOKEN: z.string().default("")
   },
   /*
    * Environment variables available on the client (and server).
@@ -24,10 +24,10 @@ const env = createEnv({
    * 💡 You'll get type errors if these are not prefixed with NEXT_PUBLIC_.
    */
   client: {
-    NEXT_PUBLIC_APP_URL: z.url().default("http://localhost:3000"),
-    NEXT_PUBLIC_GITHUB_USERNAME: z.string().min(1),
-    NEXT_PUBLIC_AVAILABLE_STATUS: z.coerce.boolean(),
-    NEXT_PUBLIC_WEB3FORMS_KEY: z.string().min(1)
+    NEXT_PUBLIC_APP_URL: z.string().default("http://localhost:3000"),
+    NEXT_PUBLIC_GITHUB_USERNAME: z.string().default("gurbaajsingh9"),
+    NEXT_PUBLIC_AVAILABLE_STATUS: z.coerce.boolean().default(true),
+    NEXT_PUBLIC_WEB3FORMS_KEY: z.string().default("")
   },
 
   /*
