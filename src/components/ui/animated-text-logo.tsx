@@ -32,7 +32,7 @@ export function AnimatedTextLogo({ text, className, href, hover }: AnimatedTextL
     },
   };
 
-  const childVariants: Variants = {
+  const childVariants: any = {
     hidden: { opacity: 0, y: 10, filter: "blur(2px)" },
     visible: {
       opacity: 1,
@@ -40,7 +40,7 @@ export function AnimatedTextLogo({ text, className, href, hover }: AnimatedTextL
       filter: "blur(0px)",
       transition: {
         duration: 0.4,
-        ease: "easeOut"
+        ease: "easeOut" as any
       },
     },
   };
