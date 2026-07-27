@@ -254,6 +254,13 @@ export const dynamic = 'force-dynamic';
 
 export async function GET() {
   try {
+    // Sanitize username in case it was entered with quotes or spaces in Vercel
+    const rawUsername = env.NEXT_PUBLIC_GITHUB_USERNAME || 'gurbaajsingh9';
+    let cleanUsername = rawUsername.replace(/['"]/g, '').trim();
+    if (cleanUsername === 'your-github-username') {
+      cleanUsername = 'gurbaajsingh9';
+    }
+
     const response = await fetch('https://api.github.com/graphql', {
       method: 'POST',
       headers: {
@@ -262,7 +269,7 @@ export async function GET() {
       },
       body: JSON.stringify({
         query: GITHUB_GRAPHQL_QUERY,
-        variables: { username: env.NEXT_PUBLIC_GITHUB_USERNAME },
+        variables: { username: cleanUsername },
       }),
       next: { revalidate: 3600 } // Cache the GitHub response for 1 hour
     });
@@ -276,7 +283,7 @@ export async function GET() {
     }
 
     if (!data?.user) {
-      return NextResponse.json({ success: false, message: `User '${env.NEXT_PUBLIC_GITHUB_USERNAME}' not found` }, { status: 404 });
+      return NextResponse.json({ success: false, message: `User '${cleanUsername}' not found` }, { status: 404 });
     }
 
     const user = data.user;
