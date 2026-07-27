@@ -1,5 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
-import { auth } from "@/lib/auth";
+import { NextResponse } from "next/server";
 
 //  Fetch all todos
 export async function GET() {
@@ -7,16 +6,16 @@ export async function GET() {
 }
 
 //  Create new todo
-export async function POST(req: NextRequest) {
+export async function POST() {
     return NextResponse.json({ success: false, message: "Todo disabled" }, { status: 403 });
 }
 
 //  Update todo
-export async function PATCH(req: NextRequest) {
+export async function PATCH() {
     return NextResponse.json({ success: false, message: "Todo disabled" }, { status: 403 });
 }
 
 // Delete todo 
-export async function DELETE(req: NextRequest) {
+export async function DELETE() {
     return NextResponse.json({ success: false, message: "Todo disabled" }, { status: 403 });
 }
