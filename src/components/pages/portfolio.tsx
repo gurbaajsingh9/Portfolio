@@ -10,6 +10,7 @@ import Footer from "./sections/footer";
 import Contact from "./sections/contact";
 import Stats from "./sections/stats";
 import { Testimonials } from "./sections/testimonials";
+import { IntroSplash } from "../shared/intro-splash";
 
 const PortfolioPage = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -47,6 +48,10 @@ const PortfolioPage = () => {
         className="no-scrollbar portfolio-container relative size-full overflow-y-auto"
       >
         <div ref={contentRef} className="flex flex-col">
+
+        <div className="h-screen w-full shrink-0 relative">
+          <IntroSplash />
+        </div>
 
         <main className="before:border-border after:border-border relative z-10 min-h-screen before:absolute before:top-0 before:left-0 before:h-full before:w-12 before:border-r before:bg-[linear-gradient(-135deg,_var(--color-border)_25%,_transparent_25%,_transparent_50%,_var(--color-border)_50%,_var(--color-border)_75%,_transparent_75%,_transparent)] before:bg-[length:5px_5px] after:absolute after:top-0 after:right-0 after:h-full after:w-12 after:border-l after:bg-[linear-gradient(135deg,_var(--color-border)_25%,_transparent_25%,_transparent_50%,_var(--color-border)_50%,_var(--color-border)_75%,_transparent_75%,_transparent)] after:bg-[length:5px_5px] max-md:before:hidden max-md:after:hidden md:px-12">
           <Navbar />
