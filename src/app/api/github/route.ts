@@ -254,12 +254,8 @@ export const dynamic = 'force-dynamic';
 
 export async function GET() {
   try {
-    // Sanitize username in case it was entered with quotes or spaces in Vercel
-    const rawUsername = env.NEXT_PUBLIC_GITHUB_USERNAME || 'gurbaajsingh9';
-    let cleanUsername = rawUsername.replace(/['"]/g, '').trim();
-    if (cleanUsername === 'your-github-username') {
-      cleanUsername = 'gurbaajsingh9';
-    }
+    // Hardcode the username to guarantee it's perfectly correct
+    const cleanUsername = 'gurbaajsingh9';
 
     const response = await fetch('https://api.github.com/graphql', {
       method: 'POST',
