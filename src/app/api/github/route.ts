@@ -4,11 +4,6 @@ import { maxBy, sumBy } from 'lodash';
 
 import type { Week, Language, GitHubStatsResponse, Trend } from '@/types/github';
 import env from '@/config/env';
-import axios from 'axios';
-
-
-export const revalidate = 604800
-
 
 class GitHubStatsCalculator {
 
@@ -255,21 +250,25 @@ const GITHUB_GRAPHQL_QUERY = `
 `;
 
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   try {
-
-    const response = await axios.post('https://api.github.com/graphql', {
-      query: GITHUB_GRAPHQL_QUERY,
-      variables: { username: env.NEXT_PUBLIC_GITHUB_USERNAME },
-    }, {
+    const response = await fetch('https://api.github.com/graphql', {
+      method: 'POST',
       headers: {
+        'Content-Type': 'application/json',
         Authorization: `Bearer ${env.GITHUB_TOKEN}`,
       },
+      body: JSON.stringify({
+        query: GITHUB_GRAPHQL_QUERY,
+        variables: { username: env.NEXT_PUBLIC_GITHUB_USERNAME },
+      }),
+      next: { revalidate: 3600 } // Cache the GitHub response for 1 hour
     });
 
-
-
-    const { data, errors } = response.data;
+    const result = await response.json();
+    const { data, errors } = result;
 
     if (errors) {
       console.error('GraphQL query failed:', errors);
