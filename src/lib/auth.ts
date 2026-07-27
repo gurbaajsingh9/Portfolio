@@ -9,7 +9,7 @@ const baseUrl = env.BETTER_AUTH_URL
 
 export const auth = betterAuth({
     baseURL: baseUrl,
-    secret: process.env.BETTER_AUTH_SECRET!, // generate with CLI: npx @better-auth/cli secret
+    secret: env.BETTER_AUTH_SECRET || "dummy_secret_for_portfolio_build", // fallback so build doesn't crash
     trustedOrigins: ["http://localhost:3000", baseUrl],
 
     session: {
