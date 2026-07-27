@@ -31,8 +31,8 @@ const About = () => {
           <div className="text-foreground/70 bg-muted/20 relative z-10 mx-auto mt-6 max-w-3xl rounded-lg border-2 border-dotted text-sm leading-relaxed backdrop-blur-3xl md:text-base">
             <div className="p-6">
               <p className="">
-                I build fast, friendly products that make users smile
-                <span className="mx-1 inline-block align-middle">
+                I build things across the stack — from LLM powered systems to the web apps and automations that put them in front of real users.
+              <span className="mx-1 inline-block align-middle">
                   <span className="ring-offset-background relative inline-block w-12 rotate-6 overflow-hidden rounded-md ring ring-offset-2">
                     <img
                       src={"/gifs/kawaii%20cat%20GIF.gif"}
@@ -41,12 +41,10 @@ const About = () => {
                     />
                   </span>
                 </span>
-                —and sometimes their dogs too.
               </p>
 
               <p className="">
-                Stack: Next.js, React, TypeScript, Tailwind. Clean APIs, tiny
-                micro‑interactions, big delight
+                Stack: Python, LLMs & RAG, SQL, plus HTML/CSS/JS on the front end. Comfortable wherever the problem actually lives.
                 <span className="mx-1 inline-block align-middle">
                   <span className="ring-offset-background relative inline-block w-12 -rotate-3 overflow-hidden rounded-md ring ring-offset-2">
                     <img
@@ -60,7 +58,7 @@ const About = () => {
               </p>
 
               <p className="">
-                Off‑duty: coffee, sketching animations, and One Piece marathons
+                Off-duty: good music and way too many browser tabs open.
                 <span className="mx-1 inline-block align-middle">
                   <span className="ring-offset-background relative inline-block w-12 rotate-3 overflow-hidden rounded-md ring ring-offset-2">
                     <img
@@ -74,8 +72,7 @@ const About = () => {
               </p>
 
               <p className="">
-                Best in small teams: quick loops, clear comms, high‑fives after
-                deploy
+                Best in: fast-moving teams where "ship it, then fix it" is a valid plan
                 <span className="mx-1 inline-block align-middle">
                   <span className="ring-offset-background relative inline-block w-12 -rotate-2 overflow-hidden rounded-md ring ring-offset-2">
                     <img
@@ -91,7 +88,7 @@ const About = () => {
               </p>
 
               <p>
-                Got a messy brief or a half‑baked idea?
+                Got a messy dataset, a half-built idea, or a workflow begging to be automated? 
                 <span className="mx-1 inline-block align-middle">
                   <span className="ring-offset-background relative inline-block w-12 rotate-2 overflow-hidden rounded-md ring ring-offset-2">
                     <img
@@ -141,12 +138,14 @@ const About = () => {
               {/* Main card */}
               <div className="bg-background relative rounded-2xl border-2 p-6 shadow-xl">
                 <div className="text-center">
-                  <div className="border-foreground/20 bg-muted/20 mb-4 overflow-hidden rounded-lg border-2 border-dashed p-4">
-                    <img
-                      src="/2nd.png"
-                      alt="ASCII"
-                      className="-mb-5 aspect-square w-full object-cover object-top dark:invert"
-                    />
+                  <div className="border-foreground/20 bg-muted/20 mb-4 overflow-hidden rounded-lg border-2 border-dashed">
+                    <div className="relative overflow-hidden rounded-sm">
+                      <img
+                        src="/2nd.png"
+                        alt="ASCII"
+                        className="aspect-square w-full scale-[1.15] object-cover object-top"
+                      />
+                    </div>
                   </div>
                   <h3 className="font-incognito text-2xl font-semibold">
                     Gurbaj
