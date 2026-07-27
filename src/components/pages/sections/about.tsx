@@ -143,7 +143,7 @@ const About = () => {
                 <div className="text-center">
                   <div className="border-foreground/20 bg-muted/20 mb-4 overflow-hidden rounded-lg border-2 border-dashed p-4">
                     <img
-                      src="/ascii-art-profile.png"
+                      src="/2nd.png"
                       alt="ASCII"
                       className="-mb-5 h-auto w-full object-cover object-center dark:invert"
                     />
