@@ -145,7 +145,7 @@ const About = () => {
                     <img
                       src="/2nd.png"
                       alt="ASCII"
-                      className="-mb-5 h-auto w-full object-cover object-center dark:invert"
+                      className="-mb-5 aspect-square w-full object-cover object-top dark:invert"
                     />
                   </div>
                   <h3 className="font-incognito text-2xl font-semibold">
