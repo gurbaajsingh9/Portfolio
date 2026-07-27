@@ -72,7 +72,7 @@ const About = () => {
               </p>
 
               <p className="">
-                Best in: fast-moving teams where "ship it, then fix it" is a valid plan
+                Best in: fast-moving teams where &quot;ship it, then fix it&quot; is a valid plan
                 <span className="mx-1 inline-block align-middle">
                   <span className="ring-offset-background relative inline-block w-12 -rotate-2 overflow-hidden rounded-md ring ring-offset-2">
                     <img

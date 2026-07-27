@@ -34,17 +34,6 @@ const Projects = () => {
       status: "completed",
     },
     {
-      title: "VisionTranslate — AI-Based Real-Time Translation Browser Extension",
-      description:
-        "A real-time translation browser extension turning any screen's text and audio into live subtitles, instantly.",
-      tags: ["Browser-Extension", "AI", "Python", "API"],
-      github: null,
-      image: "/projects/animeedge-screenshot.png",
-      live: null,
-      date: "March, 2026",
-      status: "completed",
-    },
-    {
       title: "AI-Powered Recommendation Engine + Personalized & Downloadable PYLP Report Card",
       description:
         "An LLM-driven recommendation engine that turns raw student data into personalized, downloadable report cards — cutting manual analysis time by 70%+.",
