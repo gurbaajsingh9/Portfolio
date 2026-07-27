@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useAnimationControls } from "motion/react";
+import { motion, useAnimationControls, Variants } from "motion/react";
 import { Alex_Brush } from "next/font/google";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -22,7 +22,7 @@ export function AnimatedTextLogo({ text, className, href, hover }: AnimatedTextL
   const controls = useAnimationControls();
   const [isAnimating, setIsAnimating] = useState(false);
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -32,7 +32,7 @@ export function AnimatedTextLogo({ text, className, href, hover }: AnimatedTextL
     },
   };
 
-  const childVariants = {
+  const childVariants: Variants = {
     hidden: { opacity: 0, y: 10, filter: "blur(2px)" },
     visible: {
       opacity: 1,
