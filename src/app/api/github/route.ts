@@ -288,7 +288,11 @@ export async function GET() {
     }
 
     if (!data?.user) {
-      return NextResponse.json({ success: false, message: `User '${cleanUsername}' not found` }, { status: 404 });
+      return NextResponse.json({ 
+        success: false, 
+        message: `User '${cleanUsername}' not found`,
+        github_response: result 
+      }, { status: 404 });
     }
 
     const user = data.user;
