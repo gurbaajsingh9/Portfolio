@@ -123,28 +123,26 @@ const Hero = () => {
 
       {/*  Stats Grid */}
       <div className="relative">
-        <div className="grid grid-cols-2 border md:max-w-3/4 md:border-0 md:border-t md:border-r lg:grid-cols-4">
+        <div className="grid grid-cols-3 border md:max-w-3/4 md:border-0 md:border-t md:border-r">
           {[
             {
               label: "Technologies Used",
               value: 12,
             },
-            { label: "Years of Experience", value: 2 },
-            { label: "Projects Shipped", value: 4 },
-            { label: "Happy Clients", value: 2 },
-          ].map((stat, i) => (
+            { label: "Projects Shipped", value: 6 },
+            { label: "Happy Clients", value: 3 },
+          ].map((stat, i, arr) => (
             <div
               key={i}
               className={cn(
-                "group hover:bg-foreground/5 relative p-8 text-center transition-colors",
-                i !== 3 && "border-r",
-                i < 2 && "border-b lg:border-b-0",
+                "group hover:bg-foreground/5 relative p-4 md:p-8 text-center transition-colors",
+                i !== arr.length - 1 && "border-r",
               )}
             >
-              <div className="text-foreground mb-2 text-3xl font-bold">
+              <div className="text-foreground mb-2 text-2xl font-bold md:text-3xl">
                 <NumberTicker value={stat.value} />+
               </div>
-              <div className="text-foreground/50 font-mono text-xs tracking-wider uppercase">
+              <div className="text-foreground/50 font-mono text-[10px] tracking-wider uppercase sm:text-xs">
                 {stat.label}
               </div>
             </div>

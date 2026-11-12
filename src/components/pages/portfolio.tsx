@@ -9,7 +9,6 @@ import About from "./sections/about";
 import Footer from "./sections/footer";
 import Contact from "./sections/contact";
 import Stats from "./sections/stats";
-import { Testimonials } from "./sections/testimonials";
 import { IntroSplash } from "../shared/intro-splash";
 
 const PortfolioPage = () => {
@@ -62,7 +61,6 @@ const PortfolioPage = () => {
               <Projects />
               <About />
               <Stats />
-              <Testimonials />
               <Contact />
               <Footer />
             </div>

@@ -13,6 +13,39 @@ import { motion } from "motion/react";
 const Projects = () => {
   const projects = [
     {
+      title: "Evergrit — WhatsApp Automation",
+      description:
+        "Built a WhatsApp automation system for Evergrit's online store, so customers get updates on the channel they already check every day instead of wondering where their order is.\n\nWhen a customer places an order on the website, they instantly receive an order confirmation on WhatsApp. From there, the system sends automated updates at every stage: order shipped, out for delivery, and delivered. No manual messaging, no missed updates.\n\nBeyond order tracking, I set up promotional and offer campaign messages so the brand can bring customers back, and published the product catalog on WhatsApp so shoppers can browse items inside the chat.\n\nI also handled the Meta side end to end, including business verification for Evergrit, so messages come from a verified brand name customers can trust.",
+      tags: ["WhatsApp", "Automation", "Meta API", "E-Commerce"],
+      github: null,
+      image: "/projects/evergrit-whatsapp-automation.png",
+      live: null,
+      date: "October, 2026",
+      status: "completed",
+    },
+    {
+      title: "GS Rental Cars — Website",
+      description:
+        "A website for a local self-drive car rental business, built to take a fleet that ranges from everyday hatchbacks like the Swift up to Mercedes and put it in front of customers in a way that leads to a phone call, not a bounce.\n\nLocal rental runs on trust and speed, so I kept the site simple: browse the fleet, pick a car, call a team that's available 24x7. No account walls, no friction between a customer and a booking.\n\nI built and deployed it end to end, with SEO fundamentals set up so the business shows up when people in Ludhiana search for self-drive cars.",
+      tags: ["Website", "Web", "SEO", "Fullstack"],
+      github: null,
+      image: "/projects/gs-rental-cars.png",
+      live: null,
+      date: "September, 2026",
+      status: "completed",
+    },
+    {
+      title: "NSF Arena Showroom — WhatsApp Automation",
+      description:
+        "Built a rule-based WhatsApp chatbot for a Maruti Suzuki ARENA showroom, turning the showroom's WhatsApp number into a guided sales assistant that works around the clock.\n\nWhen a customer messages the showroom, they're greeted with a branded welcome and a simple menu: book a car or test drive, enquire about a car, or talk to an executive. Each choice leads into a structured flow. Customers can book a car, schedule a test drive, or book an inspection, then pick their model from a list, all without typing out details or waiting for someone to reply.\n\nI built the booking journeys with Meta Flows, so customers fill in details through native in-chat forms instead of back-and-forth messages. Anything that needs a human is handed off to a showroom executive.\n\nThe result is that routine enquiries and bookings are handled automatically, and the sales team only steps in when a customer is ready to talk.",
+      tags: ["WhatsApp", "Chatbot", "Meta Flows", "Automation"],
+      github: null,
+      image: "/projects/nsf-arena-whatsapp-automation.png",
+      live: null,
+      date: "August, 2026",
+      status: "completed",
+    },
+    {
       title: "Advanced Hybrid RAG System",
       description:
         "A hybrid RAG pipeline fusing semantic, lexical, and graph search to deliver hallucination-resistant answers at scale.",
@@ -46,7 +79,7 @@ const Projects = () => {
     },
   ];
 
-  const tagColors = {
+  const tagColors: Record<string, string> = {
     Portfolio: "bg-blue-500/10 text-blue-600 border-blue-500/30",
     Fullstack: "bg-orange-500/10 text-orange-600 border-orange-500/30",
     Personal: "bg-purple-500/10 text-purple-600 border-purple-500/30",
@@ -55,6 +88,22 @@ const Projects = () => {
     Bot: "bg-teal-500/10 text-teal-600 border-teal-500/30",
     Anime: "bg-pink-500/10 text-pink-600 border-pink-500/30",
     Streaming: "bg-indigo-500/10 text-indigo-600 border-indigo-500/30",
+    WhatsApp: "bg-emerald-500/10 text-emerald-600 border-emerald-500/30",
+    Automation: "bg-teal-500/10 text-teal-600 border-teal-500/30",
+    "Meta API": "bg-blue-500/10 text-blue-600 border-blue-500/30",
+    "Meta Flows": "bg-indigo-500/10 text-indigo-600 border-indigo-500/30",
+    META: "bg-blue-500/10 text-blue-600 border-blue-500/30",
+    "E-Commerce": "bg-amber-500/10 text-amber-600 border-amber-500/30",
+    Website: "bg-sky-500/10 text-sky-600 border-sky-500/30",
+    Web: "bg-cyan-500/10 text-cyan-600 border-cyan-500/30",
+    SEO: "bg-green-500/10 text-green-600 border-green-500/30",
+    Chatbot: "bg-violet-500/10 text-violet-600 border-violet-500/30",
+    RAG: "bg-purple-500/10 text-purple-600 border-purple-500/30",
+    AI: "bg-rose-500/10 text-rose-600 border-rose-500/30",
+    "State-of-the-art": "bg-pink-500/10 text-pink-600 border-pink-500/30",
+    Python: "bg-yellow-500/10 text-yellow-600 border-yellow-500/30",
+    "Data Science": "bg-cyan-500/10 text-cyan-600 border-cyan-500/30",
+    API: "bg-orange-500/10 text-orange-600 border-orange-500/30",
   };
 
   return (
@@ -135,7 +184,7 @@ const Projects = () => {
                 </div>
 
                 {/* Description */}
-                <p className="text-muted-foreground mb-6 text-sm leading-relaxed md:text-base">
+                <p className="text-muted-foreground mb-6 text-sm leading-relaxed whitespace-pre-line md:text-base">
                   {project.description}
                 </p>
 
@@ -156,7 +205,7 @@ const Projects = () => {
                 </div>
 
                 {/*  Buttons */}
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap items-center gap-3">
                   {project.github && (
                     <Button
                       asChild
@@ -193,6 +242,12 @@ const Projects = () => {
                         <ArrowUpRight className="ml-1 h-3 w-3 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                       </a>
                     </Button>
+                  )}
+
+                  {!project.github && !project.live && (
+                    <span className="text-muted-foreground/70 font-mono text-xs tracking-wide">
+                      ⚡ Client Solution • Private Deployment
+                    </span>
                   )}
                 </div>
 
